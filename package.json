@@ -1,17 +1,21 @@
 {
-  "name": "parcel-sandbox",
+  "name": "advent-of-code-2018",
   "version": "1.0.0",
-  "description": "Simple Parcel Sandbox",
+  "description": "Advent Of Code",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "fast-levenshtein": "2.0.6"
+    "date-fns": "1.29.0",
+    "fast-levenshtein": "2.0.6",
+    "lodash.groupby": "4.6.0"
   },
   "devDependencies": {
     "@types/fast-levenshtein": "0.0.1",
+    "@types/lodash.groupby": "4.6.4",
     "parcel-bundler": "^1.6.1"
-  }
+  },
+  "keywords": []
 }
