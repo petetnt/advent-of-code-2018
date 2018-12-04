@@ -14,9 +14,7 @@ export const format = input =>
     })
     .sort((a, b) => dateFns.compareAsc(a.time, b.time))
     .reduce((acc, i, idx) => {
-      if (i.event.includes("wakes up")) {
-        i.id = acc[idx - 2].id;
-      } else if (i.event.includes("falls asleep")) {
+      if (!i.id) {
         i.id = acc[idx - 1].id;
       }
       acc.push(i);
