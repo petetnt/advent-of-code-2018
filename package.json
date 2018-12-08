@@ -11,12 +11,14 @@
     "date-fns": "1.29.0",
     "fast-levenshtein": "2.0.6",
     "lodash.countby": "4.6.0",
-    "lodash.groupby": "4.6.0"
+    "lodash.groupby": "4.6.0",
+    "voronoi-diagram": "1.0.1"
   },
   "devDependencies": {
     "@types/fast-levenshtein": "0.0.1",
     "@types/lodash.countby": "4.6.4",
     "@types/lodash.groupby": "4.6.4",
+    "@types/voronoi-diagram": "1.0.0",
     "parcel-bundler": "^1.6.1"
   },
   "keywords": []
