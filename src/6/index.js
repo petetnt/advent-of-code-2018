@@ -37,7 +37,7 @@ let distance = (x, y, i, j) => {
   return Math.abs(x - i) + Math.abs(y - j);
 };
 
-const run = () => {
+const populatedGrid = test => {
   const grid = createGrid(...findWidthHeight(test));
 
   for (let i = 0; i < grid.length; i++) {
@@ -50,6 +50,11 @@ const run = () => {
       }
     }
   }
+  return grid;
+};
+
+const run = () => {
+  const grid = populatedGrid(test);
 
   // calculate closest coordinats
   // props to @fhinkel for the Map-trick https://github.com/fhinkel/AdventOfCode2018/commit/251fd6091765c1c31519aad08b1b3dd36a04b652#diff-de5c572307e014f2bed7bc056133e230
@@ -67,6 +72,7 @@ const run = () => {
       }
     }
   }
+
   const nonInfite = vor(test.map(([x, y]) => [x, y])).cells.reduce(
     (acc, i, idx) => {
       if (i.every(x => x !== -1)) {
@@ -91,4 +97,22 @@ const run = () => {
   console.log("Part 6.1.", Math.max(...nums));
 };
 
+const run2 = () => {
+  const MAX_SIZE = 10000;
+  const grid = populatedGrid(test);
+  let regions = 0;
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[i].length; j++) {
+      const sum = [...grid[i][j].values()].reduce((acc, i) => acc + i, 0);
+
+      if (sum < MAX_SIZE) {
+        regions++;
+      }
+    }
+  }
+
+  console.log("Part 6.2", regions);
+};
+
 run();
+run2();
